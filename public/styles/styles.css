@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #fb6b6b;
+    font-family: "Recursive", sans-serif;
+}
+
+.root {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.233);
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+header h1 {
+    font-weight: bold;
+    color: white;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 31px;
+    font-family: "Righteous", cursive;
+}
+
+header img {
+    height: 42px;
+    margin-right: 7px;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.247);
+    width: 100%;
+    padding-inline: 20px;
+}
+
+.card {
+    padding-inline: 10px;
+    background: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.11);
+}
+
+.card h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.card ion-icon {
+    font-size: 28px;
+    --ionicon-stroke-width: 35px;
+    padding-right: 5px;
+}
