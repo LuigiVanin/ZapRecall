@@ -1,19 +1,66 @@
 import { useState } from "react";
 
 export default function Card(props) {
-    const [stage, setStage] = useState(0);
+    const [stage, setStage] = useState("close");
+    const [status, setStatus] = useState("");
 
-    function chooseStage() {
-        if (stage === 0) {
-            return (
-                <>
-                    <h1>Pergunta {props.index}</h1>
-                    <ion-icon name="play-outline"></ion-icon>
-                </>
-            );
+    function confirmAswer(result) {
+        setStage("close");
+        setStatus(result);
+        props.updateResult(result);
+    }
+
+    function StatusIcon() {
+        if (status === "bad") {
+            return <ion-icon name="close-circle"></ion-icon>;
+        } else if (status === "ok") {
+            return <ion-icon name="help-circle"></ion-icon>;
         } else {
-            return "";
+            return <ion-icon name="checkmark-circle"></ion-icon>;
         }
     }
-    return <div className="card">{chooseStage()}</div>;
+
+    return (
+        <div className={`card ${stage} ${status}`}>
+            {stage === "close" ? (
+                <>
+                    <p className={stage}>Pergunta {props.index + 1}</p>
+                    {status === "" ? (
+                        <ion-icon
+                            name="play-outline"
+                            onClick={() => {
+                                setStage("open");
+                            }}
+                        ></ion-icon>
+                    ) : (
+                        StatusIcon()
+                    )}
+                </>
+            ) : (
+                <>
+                    <p>{stage === "open" ? props.info.q : props.info.answer}</p>
+                    {stage === "open" ? (
+                        <ion-icon
+                            name="reload-outline"
+                            onClick={() => {
+                                setStage("end");
+                            }}
+                        ></ion-icon>
+                    ) : (
+                        <div className="button-box">
+                            <button onClick={() => confirmAswer("bad")}>
+                                Não Lembro
+                            </button>
+                            <button onClick={() => confirmAswer("ok")}>
+                                Quase não lembrei
+                            </button>
+                            <button onClick={() => confirmAswer("good")}>
+                                Zap!
+                            </button>
+                        </div>
+                    )}
+                </>
+            )}
+        </div>
+    );
 }

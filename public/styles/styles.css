@@ -10,11 +10,57 @@ body {
 .root {
     width: 100%;
     min-height: 100vh;
+}
+
+.home {
+    height: 100vh;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.home img {
+    height: 90px;
+}
+
+.home h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 46px;
+    font-family: "Righteous", cursive;
+    margin-bottom: 130px;
+}
+
+.home button {
+    width: 220px;
+    height: 50px;
+
+    background: #ffffff;
+    border: 1px solid #d70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    font-family: "Recursive";
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 14px;
+    text-align: center;
+
+    color: #fa5555;
+}
+
+.flash-card {
+    width: 100%;
+    min-height: 100vh;
     padding-top: 20px;
+    padding-bottom: 95px;
 }
 
 header {
-    background: rgba(0, 0, 0, 0.233);
     height: 85px;
     display: flex;
     align-items: center;
@@ -37,7 +83,6 @@ header img {
 }
 
 main {
-    background: rgba(255, 255, 255, 0.247);
     width: 100%;
     padding-inline: 20px;
 }
@@ -52,16 +97,154 @@ main {
     height: 60px;
     border-radius: 5px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.11);
+    position: relative;
 }
 
-.card h1 {
+.card.close p {
     font-style: normal;
     font-weight: 700;
     font-size: 17px;
 }
 
+.bad {
+    color: #ff3030;
+}
+
+.ok {
+    color: #ff922e;
+}
+
+.good {
+    color: #2fbe34;
+}
+
+.card.close.bad,
+.card.close.good,
+.card.close.ok {
+    text-decoration: line-through;
+    font-weight: 400;
+}
+
 .card ion-icon {
-    font-size: 28px;
+    font-size: 32px;
     --ionicon-stroke-width: 35px;
     padding-right: 5px;
+}
+
+.close.ok ion-icon {
+    font-size: 34px;
+}
+
+.card.open ion-icon {
+    font-size: 24px;
+}
+
+.card.open,
+.card.end {
+    height: 130px;
+    background: #ffffd5;
+    align-items: flex-start;
+    padding-top: 20px;
+    margin-bottom: 25px;
+    /* flex-direction: column; */
+}
+
+.card.end {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.button-box {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    padding-bottom: 10px;
+}
+
+.button-box button {
+    flex: 1;
+    font-family: "Recursive", sans-serif;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+.button-box button:nth-child(1) {
+    background: #ff3030;
+}
+
+.button-box button:nth-child(2) {
+    background: #ff922e;
+}
+
+.button-box button:nth-child(3) {
+    background: #2fbe34;
+}
+
+.card.open ion-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+footer {
+    height: 90px;
+    width: 100%;
+    background: white;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.15);
+}
+
+footer .counter {
+    font-size: 19px;
+}
+
+footer.finished {
+    padding-top: 10px;
+    height: 230px;
+    gap: 15px;
+}
+
+footer.finished .counter {
+    text-align: center;
+    max-width: 260px;
+}
+
+footer.finished .counter h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer.finished .counter p {
+    font-size: 19px;
+}
+
+footer .status {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+}
+
+footer .status .ok {
+    font-size: 30px;
+}
+
+footer button {
+    font-family: "Recursive", sans-serif;
+    font-size: 15px;
+    background: #fb6b6b;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    width: 240px;
+    border: none;
 }
