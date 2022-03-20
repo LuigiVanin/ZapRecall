@@ -46,6 +46,7 @@ export default function Card(props) {
                             onClick={() => {
                                 setStage("end");
                             }}
+                            alt="spin"
                         ></img>
                     ) : (
                         <div className="button-box">
