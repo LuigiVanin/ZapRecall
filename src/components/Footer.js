@@ -1,5 +1,5 @@
 export default function Footer(props) {
-    const { resultArray, totalCards } = { ...props };
+    const { resultArray, totalCards, restart } = { ...props };
 
     function resutlIcon(item) {
         if (item === "bad") {
@@ -11,9 +11,18 @@ export default function Footer(props) {
         }
     }
 
+    function countAppereaces(array, item) {
+        let count = 0;
+        for (const i of array) {
+            if (i === item) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     function finishDeck() {
-        if (resultArray.indexOf("bad") !== -1) {
-            console.log(resultArray);
+        if (countAppereaces(resultArray, "bad") > 0) {
             return (
                 <>
                     <h1>😢 PUTZ!</h1>
@@ -46,7 +55,7 @@ export default function Footer(props) {
             {resultArray.length !== totalCards ? (
                 ""
             ) : (
-                <button>REINICIAR RECALL</button>
+                <button onClick={restart}>REINICIAR RECALL</button>
             )}
         </footer>
     );

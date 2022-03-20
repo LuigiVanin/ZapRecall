@@ -15,7 +15,7 @@ export default function Card(props) {
             return <ion-icon name="close-circle"></ion-icon>;
         } else if (status === "ok") {
             return <ion-icon name="help-circle"></ion-icon>;
-        } else {
+        } else if (status === "good") {
             return <ion-icon name="checkmark-circle"></ion-icon>;
         }
     }
