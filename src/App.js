@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import Header from "./components/Header";
 import Deck from "./components/Deck";
 import Footer from "./components/Footer";
@@ -36,6 +35,10 @@ export default function App() {
                 q: "Usamos estado (state) para __",
                 answer: "dizer para o React quais informações quando",
             },
+            {
+                q: "Componentes devem iniciar com __ ",
+                answer: "letra maiúscula",
+            },
         ],
         html: [
             {
@@ -49,6 +52,26 @@ export default function App() {
             {
                 q: "A tag head é especial pois __",
                 answer: "Possui especial de adicionar metadata e recursos de estilo ao html",
+            },
+            {
+                q: "O que significa HTML?",
+                answer: "significa Hyper Text Markup Language",
+            },
+            {
+                q: "Quem é responsável por estilizar o HTML?",
+                answer: "CSS",
+            },
+            {
+                q: "O que sa tag <title> faz?",
+                answer: "Dá um título a página web, ou seja, nomeia a guia",
+            },
+            {
+                q: "O que significa 'utf-8'?",
+                answer: "É um tipo de codificação de texto, ideal para adaptar páginas web",
+            },
+            {
+                q: "HTML é uma linguagem de __",
+                answer: "Marcação de texto",
             },
         ],
         geral: [
@@ -71,6 +94,18 @@ export default function App() {
             {
                 q: "Usamos estado (state) para __",
                 answer: "dizer para o React quais informações quando",
+            },
+            {
+                q: "BackEnd é __",
+                answer: "A parte do site que fica fora da iteração direta do usuária e é acessada via requisições",
+            },
+            {
+                q: "o que significa a sigla IP?",
+                answer: "Internet Protocol",
+            },
+            {
+                q: "A tag head é especial pois __",
+                answer: "Possui especial de adicionar metadata e recursos de estilo ao html",
             },
         ],
     };
@@ -104,6 +139,7 @@ export default function App() {
         setDeck([]);
         setResult([]);
         setSelectedDeck("geral");
+        setGoal(0);
         changePage();
     }
 

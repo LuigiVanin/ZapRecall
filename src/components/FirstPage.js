@@ -15,8 +15,8 @@ export default function FirstPage(props) {
                     Escolha seu Deck
                 </option>
                 <option value="Geral">Geral</option>
-                <option value="HTML">HTML</option>
                 <option value="React">React</option>
+                <option value="HTML">HTML</option>
             </select>
             <input
                 type="number"

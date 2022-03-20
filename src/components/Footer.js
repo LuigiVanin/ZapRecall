@@ -1,5 +1,5 @@
 export default function Footer(props) {
-    const { resultArray, totalCards, restart } = { ...props };
+    const { resultArray, totalCards, restart, goal } = { ...props };
 
     function resutlIcon(item) {
         if (item === "bad") {
@@ -22,7 +22,7 @@ export default function Footer(props) {
     }
 
     function finishDeck() {
-        if (countAppereaces(resultArray, "bad") > 0) {
+        if (countAppereaces(resultArray, "bad") > totalCards - goal) {
             return (
                 <>
                     <h1>😢 PUTZ!</h1>

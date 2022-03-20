@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SpinImage from "../assets/spin.png";
 
 export default function Card(props) {
     const [stage, setStage] = useState("close");
@@ -40,12 +41,12 @@ export default function Card(props) {
                 <>
                     <p>{stage === "open" ? props.info.q : props.info.answer}</p>
                     {stage === "open" ? (
-                        <ion-icon
-                            name="reload-outline"
+                        <img
+                            src={SpinImage}
                             onClick={() => {
                                 setStage("end");
                             }}
-                        ></ion-icon>
+                        ></img>
                     ) : (
                         <div className="button-box">
                             <button onClick={() => confirmAswer("bad")}>
