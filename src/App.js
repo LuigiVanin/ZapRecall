@@ -76,8 +76,8 @@ export default function App() {
         ],
         geral: [
             {
-                q: "Usamos estado (state) para __",
-                answer: "dizer para o React quais informações quando",
+                q: "Componentes devem iniciar com __ ",
+                answer: "letra maiúscula",
             },
             {
                 q: "O que é DOCTYPE no HTML",
@@ -104,8 +104,8 @@ export default function App() {
                 answer: "Internet Protocol",
             },
             {
-                q: "A tag head é especial pois __",
-                answer: "Possui especial de adicionar metadata e recursos de estilo ao html",
+                q: "O que significa HTML?",
+                answer: "significa Hyper Text Markup Language",
             },
         ],
     };
@@ -132,7 +132,9 @@ export default function App() {
 
     function changePage() {
         setPage(!page);
-        setDeck([...decks[selectedDeck]]);
+        setDeck(
+            [...decks[selectedDeck]].sort(() => (Math.random() > 0.5 ? 1 : -1))
+        );
     }
 
     function restartGame() {
@@ -161,10 +163,7 @@ export default function App() {
             ) : (
                 <div className="flash-card">
                     <Header />
-                    <Deck
-                        deck={deck.sort(() => (Math.random() > 0.5 ? 1 : -1))}
-                        updateResult={updateResult}
-                    />
+                    <Deck deck={deck} updateResult={updateResult} />
                     <Footer
                         totalCards={deck.length}
                         resultArray={result}
